@@ -1,0 +1,10 @@
+{
+    "HEADER": {
+        "MENU": {},
+        "BUTTON": {
+            "LOGIN": "Login",
+            "REGISTER": "Register"
+        }
+    },
+    "SLIDER": {}
+}

@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container px-0">
+        <a class="navbar-brand" href="https://geeksui.codescandy.com/geeks/index.html"><img style="width: 205px;"
+                src="assets/images/logo/logo.png"></a>
+        <div class="d-flex align-items-center order-lg-3 ms-lg-3">
+            <div class="d-flex align-items-center">
+                <div>
+                    <div class="nav-item dropdown">
+
+                        <a href="#"
+                            class=" nav-item dropdown form-check form-switch theme-switch btn btn-light btn-icon  me-2"
+                            id="lang-toogle">
+                            <img *ngIf="flagsValue !== undefined" src="{{flagsValue}}" alt="" style="width:25px; ">
+                            <img *ngIf="flagsValue === undefined" src="{{valueSet}}" alt="" style="width:25px; ">
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-arrow" aria-labelledby="navbarListing">
+                            <div>
+                                <a href="javascript:void(0);" class="dropdown-item" *ngFor="let item of listLang"
+                                    (click)="setLanguage(item.text, item.lang, item.flag)"
+                                    [ngClass]="{'active': cookieValue === item.lang}">
+                                    <img src="{{item.flag}}" alt="user-image" class="me-1" height="12"> <span
+                                        class="align-middle">{{item.text}}</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <a (click)="openUrl('login')" class="btn btn-outline-primary me-2 ">Se connecter</a>
+                <a (click)="openUrl('register')" class="btn btn-primary d-none d-md-block">Créer un compte</a>
+            </div>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="icon-bar top-bar mt-0"></span>
+                <span class="icon-bar middle-bar"></span>
+                <span class="icon-bar bottom-bar"></span>
+            </button>
+        </div>
+        <!-- Button -->
+
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbar-default">
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link {{ url == '' ? 'active' : '' }}" href="javascript:;" (click)="openUrl('')">
+                        <i class="bi bi-house-check fs-3 text-primary"></i> Accueil</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link {{ url == '/offer' ? 'active' : '' }}" href="javascript:;"
+                        (click)="openUrl('offer')" id="navbarListing" data-bs-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <i class="bi bi-person-check fs-3 text-primary"></i> Toutes les offres
+                    </a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ url == '/how-do' ? 'active' : '' }}" href="javascript:;"
+                        (click)="openUrl('how-do')" id="navbarPages" data-bs-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <i class="bi bi-question-lg fs-3 text-primary"></i>Comment ça marche ?
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ url == '/contact' ? 'active' : '' }}" href="javascript:;"
+                        (click)="openUrl('contact')">
+                        <i class="bi bi-headset fs-3 text-primary"></i> Contactez-nous</a>
+                </li>
+
+
+            </ul>
+
+
+        </div>
+    </div>
+</nav>

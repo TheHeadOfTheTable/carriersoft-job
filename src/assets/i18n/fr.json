@@ -1,0 +1,10 @@
+{
+    "HEADER": {
+        "MENU": {},
+        "BUTTON": {
+            "LOGIN": "Se connecter",
+            "REGISTER": "Créer un compte"
+        }
+    },
+    "SLIDER": {}
+}
